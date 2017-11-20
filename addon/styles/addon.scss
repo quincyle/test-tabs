@@ -1,0 +1,15 @@
+.my-tabs {
+  .header {
+    display: flex;
+    flex-direction: row;
+
+    .my-tab {
+      cursor: pointer;
+      margin: 10px;
+
+      &.active {
+        color: blue;
+      }
+    }
+  }
+}

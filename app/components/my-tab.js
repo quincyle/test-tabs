@@ -1,0 +1,1 @@
+export { default } from 'test-tabs/components/my-tab';

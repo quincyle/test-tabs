@@ -1,0 +1,18 @@
+<div
+  {{action (action 'onChange')}}
+  class={{if isSelected ' active'}}
+  role='button'
+>
+  {{text}}
+</div>
+
+{{#if isSelected}}
+  {{to-elsewhere
+    named=targetOutlet
+    send=(hash
+      contentClass=contentClass
+      tabIndex=tabIndex
+      content=content
+    )
+  }}
+{{/if}}

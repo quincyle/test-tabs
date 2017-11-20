@@ -1,0 +1,21 @@
+<div class='header'>
+  {{#if hasBlock}}
+    {{yield (hash
+      tab=(component 'my-tab'
+        targetOutlet=targetOutlet
+        selectedTab=selectedTab
+        onChange=onChange
+      ))
+    }}
+  {{/if}}
+</div>
+
+{{#from-elsewhere name=targetOutlet as |tab|}}
+  <div class='content {{tab.contentClass}}'>
+    <div class="liquid-tab-content {{tab.contentClass}}">
+      {{#liquid-bind tab.tabIndex}}
+        {{tab.content}}
+      {{/liquid-bind}}
+    </div>
+  </div>
+{{/from-elsewhere}}

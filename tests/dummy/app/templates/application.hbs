@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#my-tabs
+  selectedTab=selectedTab
+  onChange=(action 'onChange')
+  as |controls|
+}}
+  {{#each options as |option index|}}
+    {{controls.tab
+      id=index
+      tabIndex=option.tabIndex
+      text=option.title
+      content=option.content
+    }}
+  {{/each}}
+{{/my-tabs}}
 
-{{outlet}}
+{{liquid-outlet}}
